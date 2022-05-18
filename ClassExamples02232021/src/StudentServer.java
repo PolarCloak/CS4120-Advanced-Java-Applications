@@ -1,0 +1,56 @@
+import java.io.*;
+import java.net.*;
+
+public class StudentServer {
+  private ObjectOutputStream outputToFile;
+  private ObjectInputStream inputFromClient;
+
+  public static void main(String[] args) {
+    new StudentServer();
+  }
+
+  public StudentServer() {
+    try {
+      // Create a server socket  Make sure this is on 8000!
+      ServerSocket serverSocket = new ServerSocket(8001);
+      System.out.println("Server started ");
+
+      // Create an object ouput stream
+      outputToFile = new ObjectOutputStream(
+           new FileOutputStream("student.dat", true));
+          //new FileOutputStream("student.txt", true));
+      while (true) {
+        // Listen for a new connection request
+        Socket socket = serverSocket.accept();
+
+        System.out.println("socket created");
+
+        // Create an input stream from the socket
+        inputFromClient =
+          new ObjectInputStream(socket.getInputStream());
+
+        // Read from input
+        Object object = inputFromClient.readObject();
+
+        // Write to the file
+        outputToFile.writeObject(object);
+        System.out.println("A new student object is stored");
+      }
+    }
+    catch(ClassNotFoundException ex) {
+      ex.printStackTrace();
+    }
+    catch(IOException ex) {
+      ex.printStackTrace();
+    }
+    finally {
+      try {
+        inputFromClient.close();
+        outputToFile.close();
+      }
+      catch (Exception ex) {
+        ex.printStackTrace();
+      }
+    }
+  }
+}

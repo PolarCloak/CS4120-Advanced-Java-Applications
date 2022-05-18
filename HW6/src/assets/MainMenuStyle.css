@@ -1,0 +1,49 @@
+.root{
+    -fx-font-size: 14pt;
+    -fx-font-family: "Nova Flat";
+}
+#title{
+    -fx-alignment: center;
+}
+#titleLabel{
+    -fx-font-size: 40pt;
+    -fx-padding: 10px 400px 10px 10px;
+}
+#orderButton{
+
+}
+#strikeText{
+    -fx-padding: 10px;
+}
+#topBody{
+    -fx-padding: 100px 0px 0px 10px;
+}
+#body{
+    -fx-padding: 310px 0px 0px 0px;
+}
+#menuItem{
+    -fx-padding: 10px;
+}
+#menuItemImage{
+    -fx-padding: 10px;
+    -fx-border-width: 2px;
+    -fx-border-color: black;
+}
+#menuItemName{
+    -fx-padding: 10px;
+    -fx-font-weight: bold;
+}
+#menuItemDescription{
+    -fx-padding: 10px;
+}
+#menuItemPrice{
+    -fx-padding: 10px;
+}
+#menuItemDetails{
+    -fx-padding: 10px;
+    -fx-min-width: 400px;
+}
+#menuItemInput{
+    -fx-padding: 10px;
+    -fx-max-width: 50px;
+}

@@ -1,0 +1,17 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="HW7:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>HW7</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="HW7-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="HW7:war exploded" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="lib" />
+      </element>
+    </root>
+  </artifact>
+</component>
